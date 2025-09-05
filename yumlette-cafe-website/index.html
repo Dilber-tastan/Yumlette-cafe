@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yumlette Cafe</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: #1a1a1a;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo {
+            color: #fff;
+            text-decoration: none;
+            font-size: 28px;
+            font-weight: bold;
+            font-family: 'Georgia', serif;
+            letter-spacing: 1px;
+        }
+        #section-1 {
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(image/istockphoto-1407710795-612x612.jpg);
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            width: 100%;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .welcome-text {
+            color: #fff;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 40px;
+            font-family: 'Georgia', serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .section-title {
+            color: #fff;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 40px;
+            font-family: 'Georgia', serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .subsection-title {
+            color: #fff;
+            font-size: 28px;
+            text-align: center;
+            margin: 20px 0;
+            font-family: 'Georgia', serif;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 0;
+            gap: 20px;
+        }
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
+        .card {
+            min-width: 300px;
+            flex: 0 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            overflow: hidden;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            height: 450px; /* Kart yüksekliğini sabit tutarak resimleri ve içeriği hizala */
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            opacity: 0.9;
+        }
+        .card img {
+            width: 100%;
+            height: 250px; /* Sabit yükseklik, resimler bu çerçeveye sığacak */
+            object-fit: contain; /* Resimleri kırpmadan orijinal oranlarıyla sığdır */
+            border-radius: 10px 10px 0 0;
+        }
+        .container {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .container h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .container p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+            height: auto;
+            flex-grow: 1;
+        }
+        .price {
+            font-size: 18px;
+            color: #eb1b9b;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .carousel-nav button {
+            background-color: #eb1b9b;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .carousel-nav button:hover {
+            background-color: #fff;
+            color: #eb1b9b;
+        }
+        #section-2, #section-3, #section-4 {
+            width: 100%;
+            padding: 20px;
+        }
+        @media (max-width: 768px) {
+            .card {
+                min-width: 250px;
+            }
+            .card img {
+                height: 200px; /* Küçük ekranlarda daha küçük yükseklik */
+            }
+            .card {
+                height: 400px; /* Küçük ekranlarda kart yüksekliği ayarı */
+            }
+            .carousel-nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">YUMLETTE CAFE</a>
+    </header>
+    <main>
+        <section id="section-1">
+            
+            <section id="section-2">
+                <h3 class="subsection-title">Sıcak İçecekler</h3>
+                <div class="carousel" id="hot-drinks">
+                    <div class="card">
+                        <img src="image/expresso.jpeg" alt="Espresso">
+                        <div class="container">
+                            <h2>Espresso</h2>
+                            <p>Özenle seçtiğimiz kahve çekirdekleri tam kıvamında ustalıkla kavrulur ve eşsiz Yumlette aroması tadını bulur.</p>
+                            <p class="price">70 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/double.jpeg" alt="Double Espresso">
+                        <div class="container">
+                            <h2>Double Espresso</h2>
+                            <p>Özenle kavurduğumuz kahve çekirdeklerinin en enerji veren hali. Duble keyifli espresso lezzetimiz.</p>
+                            <p class="price">80 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/Espresso+Machiatto+1080x1440_1080x1440.jpg" alt="Espresso Macchiato">
+                        <div class="container">
+                            <h2>Espresso Macchiato</h2>
+                            <p>Single shot espresso ve üzerine çok az süt köpüğü ile hazırladığımız nefis enerji kaynağı.</p>
+                            <p class="price">90 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/1cb9e666-d326-4c13-b1a1-562ea374a525_1_2.jpg" alt="Double Espresso Macchiato">
+                        <div class="container">
+                            <h2>Double Espresso Macchiato</h2>
+                            <p>Kahve keyfini katlamak isteyenler için double shot espresso ve üzerine çok az süt köpüğü.</p>
+                            <p class="price">90 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/cartodo.jpeg" alt="Cortado">
+                        <div class="container">
+                            <h2>Cortado</h2>
+                            <p>Espresso, süt ve süt kremasının mükemmel oranı. Yumlette baristalarının ustalığıyla eşsiz kahve deneyimi.</p>
+                            <p class="price">80TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/double cortodo.jpeg" alt="Double Cortado">
+                        <div class="container">
+                            <h2>Double Cortado</h2>
+                            <p>Eşsiz Cortado deneyimini ikiye katlamak isteyenlerin tercihi. İki kat espresso, süt ve krema.</p>
+                            <p class="price">90 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/americano.jpeg" alt="Americano">
+                        <div class="container">
+                            <h2>Americano</h2>
+                            <p>Yumlette’ye özel kahve lezzetinin eşsiz aromasından gelen uzun süreli keyif.</p>
+                            <p class="price">70 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/cappucion.jpeg" alt="Cappuccino">
+                        <div class="container">
+                            <h2>Cappuccino</h2>
+                            <p>Espresso, süt ve süt köpüğü ile hazırladığımız Yumlette’ye özel bir klasik kahve keyfi.</p>
+                            <p class="price">90 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/Cafe-con-Miel.webp" alt="Miel">
+                        <div class="container">
+                            <h2>Miel</h2>
+                            <p>Bal, tarçın şurubu, espresso, süt ve süt kremasının eşsiz uyumuyla bambaşka bir kahve deneyimi.</p>
+                            <p class="price">90 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/latte.jpg" alt="Latte">
+                        <div class="container">
+                            <h2>Latte</h2>
+                            <p>Espresso, süt ve az miktarda süt köpüğü dokunuşuyla tamamladığımız özel lezzetimiz.</p>
+                            <p class="price">90 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/sütlüfk.jpeg" alt="Sütlü Filtre Kahve">
+                        <div class="container">
+                            <h2>Sütlü Filtre Kahve</h2>
+                            <p>Taze çekilmiş filtre kahve çekirdeklerinin mükemmel aromasının sütle eşsiz uyumu.</p>
+                            <p class="price">90 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/sıcak çikolata.jpeg" alt="Sıcak Çikolata">
+                        <div class="container">
+                            <h2>Sıcak Çikolata</h2>
+                            <p>Çikolatanın çekici davetine kapılanlar için süt ve sıcak çikolata tozuyla hazırladığımız özel lezzet.</p>
+                            <p class="price">90 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/flat white.webp" alt="Flat White">
+                        <div class="container">
+                            <h2>Flat White</h2>
+                            <p>Espresso, süt ve süt kremasının mükemmel oranda buluşmasıyla Yumlette ustalığının eseri.</p>
+                            <p class="price">90 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/chai.jpeg" alt="Chai Tea Latte">
+                        <div class="container">
+                            <h2>Chai Tea Latte</h2>
+                            <p>Güne egzotik bir hava katmak isteyenlere özel sütlü ve tarçınlı chai tea latte deneyimi.</p>
+                            <p class="price">90 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/mocha.jpeg" alt="Mocha">
+                        <div class="container">
+                            <h2>Mocha</h2>
+                            <p>Espresso, çikolata tozu, süt ve süt köpüğüyle kahve ve çikolatanın özel buluşması.</p>
+                            <p class="price">90 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/lattemacşhato.jpeg" alt="Latte Macchiato">
+                        <div class="container">
+                            <h2>Latte Macchiato</h2>
+                            <p>Önce süt, üzerine süt köpüğü ve son dokunuş olarak nefis espresso. Farkı lezzetinde saklı.</p>
+                            <p class="price">90 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/Chocolate Cookie.jpeg" alt="Chocolate Cookie Latte">
+                        <div class="container">
+                            <h2>Chocolate Cookie Latte</h2>
+                            <p>Espresso, süt, bisküvi tozu ve üzerinde Kit Kat parçacıklarıyla karşı konulmaz bir lezzet.</p>
+                            <p class="price">110 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/aramel Macchiato.jpeg" alt="Caramel Macchiato">
+                        <div class="container">
+                            <h2>Caramel Macchiato</h2>
+                            <p>Espresso, süt, az süt köpüğü ve karamel ile taçlanan, güçlü aromasıyla özel Yumlette lezzeti.</p>
+                            <p class="price">100TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/Salted Caramel Latte.jpeg" alt="Salted Caramel Latte">
+                        <div class="container">
+                            <h2>Salted Caramel Latte</h2>
+                            <p>Espresso ve sütün tuzlu karamel aromasıyla buluşmasından ortaya çıkan özel kahve deneyimi.</p>
+                            <p class="price">110TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/Pumpkin Latte.jpeg" alt="Pumpkin Latte">
+                        <div class="container">
+                            <h2>Pumpkin Latte</h2>
+                            <p>Espresso, bal kabağı, süt, süt köpüğünün üzerine kakule tozu ile özel kahve lezzeti.</p>
+                            <p class="price">90 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/White Mocha.jpeg" alt="White Mocha">
+                        <div class="container">
+                            <h2>White Mocha</h2>
+                            <p>Espresso, süt ve beyaz çikolata. Kahve deneyimini bambaşka bir boyuta taşıyan lezzet.</p>
+                            <p class="price">90 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/Türk Kahvesi.jpeg" alt="Türk Kahvesi">
+                        <div class="container">
+                            <h2>Türk Kahvesi</h2>
+                            <p>Özel kavrulmuş ve öğütülmüş kahve çekirdeklerinden hazırladığımız bol köpüklü efsane lezzet.</p>
+                            <p class="price">80 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/Earl Grey Çay.jpeg" alt="Earl Grey Çay">
+                        <div class="container">
+                            <h2>Earl Grey Çay</h2>
+                            <p>Çay sevenlere özel nefis earl grey çay lezzetimiz.</p>
+                            <p class="price">90 TL</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button onclick="scrollCarousel('hot-drinks', -1)">←</button>
+                    <button onclick="scrollCarousel('hot-drinks', 1)">→</button>
+                </div>
+                <h3 class="subsection-title">Soğuk İçecekler</h3>
+                <div class="carousel" id="cold-drinks">
+                    <div class="card">
+                        <img src="image/buzlu americano.jpeg" alt="Buzlu Americano">
+                        <div class="container">
+                            <h2>Buzlu Americano</h2>
+                            <p>Kahvesini soğuk sevenlerin en çok tercih ettiği Yumlette klasiği.</p>
+                            <p class="price">100 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/buzlu latte.jpeg" alt="Buzlu Latte">
+                        <div class="container">
+                            <h2>Buzlu Latte</h2>
+                            <p>Nefis lattemizi hem canlanmak hem de serinlemek için tercih edenlere özel.</p>
+                            <p class="price">110TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/frappe.jpg" alt="Espresso Frappe">
+                        <div class="container">
+                            <h2>Espresso Frappe</h2>
+                            <p>Espresso, soğuk süt ve buzun blender ile kıvam almasıyla ortaya çıkan serinlik.</p>
+                            <p class="price">90 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/mocha frappe.jpeg" alt="Mocha Frappe">
+                        <div class="container">
+                            <h2>Mocha Frappe</h2>
+                            <p>Mocha lezzetini soğuk tercih edenlere özel tadına doyumsuz frappe.</p>
+                            <p class="price">100 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/caramel.jpeg" alt="Caramel Frappe">
+                        <div class="container">
+                            <h2>Caramel Frappe</h2>
+                            <p>Süt ve karamelin mükemmel uyumu ve buzdan gelen eşsiz ferahlığın buluşması.</p>
+                            <p class="price">100 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/buzlu-caffe-latte.jpg" alt="Buzlu Chocolate Cookie Latte">
+                        <div class="container">
+                            <h2>Buzlu Chocolate Cookie Latte</h2>
+                            <p>Soğuk süt, buz, espresso, bisküvi tozu ve Kit Kat parçalarıyla özel soğuk kahve lezzeti.</p>
+                            <p class="price">110TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/images (1).jpeg" alt="Buzlu Salted Caramel Latte">
+                        <div class="container">
+                            <h2>Buzlu Salted Caramel Latte</h2>
+                            <p>Soğuk kahve deneyimini uçlarda yaşamak isteyenlere özel tuzlu karamel aroması.</p>
+                            <p class="price">100 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/easy-iced-chai-tea-latte-recipe-web-4-600x9000.webp" alt="Buzlu Chai Tea Latte">
+                        <div class="container">
+                            <h2>Buzlu Chai Tea Latte</h2>
+                            <p>Sıcak günlerde ferahlamanın en lezzetli yolu, Yumlette’ye özel buzlu chai tea latte.</p>
+                            <p class="price">100 TL</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button onclick="scrollCarousel('cold-drinks', -1)">←</button>
+                    <button onclick="scrollCarousel('cold-drinks', 1)">→</button>
+                </div>
+            </section>
+            <section id="section-3">
+                <h2 class="section-title">Tatlılar</h2>
+                <div class="carousel" id="desserts">
+                    <div class="card">
+                        <img src="image/tiramisu.jpg" alt="Tiramisu">
+                        <div class="container">
+                            <h2>Tiramisu</h2>
+                            <p>Kahvenin lezzet kardeşi tiramisu, Yumlette farkıyla mükemmel tadına hayran bırakıyor.</p>
+                            <p class="price"> 150TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/profiterol.jpg" alt="Profiterollü Pasta">
+                        <div class="container">
+                            <h2>Profiterollü Pasta</h2>
+                            <p>Çikolata ve kremanın mükemmel uyumuyla kendi hayran kitlesini yaratan olağanüstü lezzet.</p>
+                            <p class="price">155 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/çilekli magnolya.jpg" alt="Çilekli Magnolya">
+                        <div class="container">
+                            <h2>Çilekli Magnolya</h2>
+                            <p>Taze çilekler ve kremsi muhallebi ile günlük hazırlanan ferah bir tatlı.</p>
+                            <p class="price">160 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/Frambuazli-Cheesecake.jpg" alt="Frambuazlı Cheesecake">
+                        <div class="container">
+                            <h2>Frambuazlı Cheesecake</h2>
+                            <p>Kahvenin yanında en çok tercih edilen tatlımız, meyveli sevenlerin favorisi.</p>
+                            <p class="price">155 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/limonlu chesecake.jpg" alt="Limonlu Cheesecake">
+                        <div class="container">
+                            <h2>Limonlu Cheesecake</h2>
+                            <p>Limon ve cheesecake’in eşsiz uyumu, kahveyle mükemmel bir lezzet patlaması.</p>
+                            <p class="price">155 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/havuç kek.jpg" alt="Havuç Dilim Kek">
+                        <div class="container">
+                            <h2>Havuç Dilim Kek</h2>
+                            <p>Havuç ve tarçının eşsiz uyumuyla dilediğiniz içeceğin yanında keyifli bir lezzet.</p>
+                            <p class="price">110 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/mozaik.jpeg" alt="Mozaik Dilim Kek">
+                        <div class="container">
+                            <h2>Mozaik Dilim Kek</h2>
+                            <p>Ev yapımı tadında bol kakaolu ve vanilyalı mozaik kek, en sevilen tatlılarımızdan.</p>
+                            <p class="price">140 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/velvet cup cake.jpg" alt="Velvet Cup Kek">
+                        <div class="container">
+                            <h2>Velvet Cup Kek</h2>
+                            <p>Orman meyvelerinden gelen egzotik tatlarla kahvenin yanında nefis bir lezzet.</p>
+                            <p class="price">120 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/ekler.jpeg" alt="Çikolatalı Ekler">
+                        <div class="container">
+                            <h2>Çikolatalı Ekler</h2>
+                            <p>Klasik ve efsane bir tatlı, kahvesinin yanında lezzet patlaması isteyenler için.</p>
+                            <p class="price">110TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/hçevizliekler.jpeg" alt="Hindistan Cevizli Ekler">
+                        <div class="container">
+                            <h2>Hindistan Cevizli Ekler</h2>
+                            <p>Hindistan cevizi dokunuşuyla ekler lezzetini zirveye taşıyan nefis tatlı.</p>
+                            <p class="price">110 TL</p>
+                        </div>
+                    </div>
+                  
+                    <div class="card">
+                        <img src="image/çikolatadonut.jpeg" alt="Çikolatalı Donut">
+                        <div class="container">
+                            <h2>Çikolatalı Donut</h2>
+                            <p>Kahvenin dünyaca meşhur eşlikçisi donut, Yumlette’ye özel tarifiyle sizi bekliyor.</p>
+                            <p class="price">100 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/çilekdonut.jpeg" alt="Çilekli Donut">
+                        <div class="container">
+                            <h2>Çilekli Donut</h2>
+                            <p>Tatlı çileksiz olmaz diyenlere özel, her daim taze ve nefis çilekli donut.</p>
+                            <p class="price">100TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/ispanyol.jpeg" alt="İspanyol Creamy Cheesecake">
+                        <div class="container">
+                            <h2>İspanyol Creamy Cheesecake</h2>
+                            <p>Krema gibi yumuşacık dokusuyla kahve veya çayınızın yanında mükemmel uyum.</p>
+                            <p class="price">130 TL</p>
+                      </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/şekerdonut.jpeg" alt="Şeker Taneli Donut">
+                        <div class="container">
+                            <h2>Şeker Taneli Donut</h2>
+                            <p>Masal diyarından çıkmış gibi ihtişamlı, bir ısırık almadan duramayacağınız donut.</p>
+                            <p class="price">100TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/suffle.jpeg" alt="Sufle">
+                        <div class="container">
+                            <h2>Sufle</h2>
+                            <p>Lezzet taşmasıyla efsane bir tatlı, Yumlette’de kahvenin yanında bambaşka.</p>
+                            <p class="price">150 TL</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button onclick="scrollCarousel('desserts', -1)">←</button>
+                    <button onclick="scrollCarousel('desserts', 1)">→</button>
+                </div>
+            </section>
+            <section id="section-4">
+                <h2 class="section-title">Yiyecekler</h2>
+                <div class="carousel" id="foods">
+                    <div class="card">
+                        <img src="image/indir (4).jpeg" alt="Kahvaltı Tabağı">
+                        <div class="container">
+                            <h2>Kahvaltı Tabağı</h2>
+                            <p>Günlük taze malzemelerle hazırlanan zengin bir kahvaltı tabağı.</p>
+                            <p class="price">180 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/tost.jpeg" alt="Tost">
+                        <div class="container">
+                            <h2>Tost</h2>
+                            <p>Taze kaşar peyniri ve günlük malzemelerle hazırlanan sıcacık bir tost.</p>
+                            <p class="price">90 TL</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="image/atıştıamaa.jpeg" alt="Atıştırmalık Tabak">
+                        <div class="container">
+                            <h2>Atıştırmalık Tabak</h2>
+                            <p>Taze ve lezzetli atıştırmalıklarla dolu, günlük hazırlanan bir tabak.</p>
+                            <p class="price">210 TL</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button onclick="scrollCarousel('foods', -1)">←</button>
+                    <button onclick="scrollCarousel('foods', 1)">→</button>
+                </div>
+            </section>
+        </section>
+    </main>
+    <script>
+        const carousels = {
+            'hot-drinks': document.getElementById('hot-drinks'),
+            'cold-drinks': document.getElementById('cold-drinks'),
+            'desserts': document.getElementById('desserts'),
+            'foods': document.getElementById('foods')
+        };
+
+        let autoScrollIntervals = {};
+
+        function startAutoScroll(carouselId) {
+            autoScrollIntervals[carouselId] = setInterval(() => {
+                scrollCarousel(carouselId, 1);
+            }, 5500); // 5.5 saniye
+        }
+
+        function stopAutoScroll(carouselId) {
+            clearInterval(autoScrollIntervals[carouselId]);
+        }
+
+        function scrollCarousel(carouselId, direction) {
+            const carousel = carousels[carouselId];
+            const scrollAmount = carousel.offsetWidth / 2; // Yarım ekran kaydırma
+            carousel.scrollLeft += direction * scrollAmount;
+
+            // Otomatik kaydırmayı durdur ve yeniden başlat
+            stopAutoScroll(carouselId);
+            startAutoScroll(carouselId);
+        }
+
+        // Her carousel için otomatik kaydırmayı başlat
+        Object.keys(carousels).forEach(carouselId => {
+            startAutoScroll(carouselId);
+
+            // Mouse hover ile durdur
+            carousels[carouselId].addEventListener('mouseenter', () => stopAutoScroll(carouselId));
+            carousels[carouselId].addEventListener('mouseleave', () => startAutoScroll(carouselId));
+        });
+    </script>
+</body>
+</html>
